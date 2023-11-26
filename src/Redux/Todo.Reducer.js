@@ -3,13 +3,13 @@ import { ADD_TODO_ERROR, ADD_TODO_START, ADD_TODO_SUCCESS, DELETE_TODO_ERROR, DE
 // getting values from local storage
 const gettingVAlueLocalStorage = () => {
     let todos = JSON.parse(localStorage.getItem('todosLists'));
-    if(todos){
+    if (todos) {
         return todos
-    }else{
+    } else {
         return ['This is one of my decent Projects',
-        'A To-Do Application',
-        'You can easily add, edit, & delete.',
-        "& don't worry all these will not going anywhere after refreshing..."]
+            'A To-Do Application',
+            'You can easily add, edit, & delete.',
+            "& don't worry all these will not going anywhere after refreshing..."]
     }
 }
 
@@ -74,7 +74,7 @@ const todoReducer = (state = Init, action) => {
             if (filterr.length === 0) {
                 // if it was deleted it will added in the end, so for adding we used data;
                 dataaa = [...state.todosLists, action.payload.item]
-                
+
             } else {
                 let value = state.todosLists.map((item, index) => {
                     if (item + index === action.payload.unique_ID) {
@@ -106,8 +106,9 @@ const todoReducer = (state = Init, action) => {
                 loading: false,
                 error: action.payload
             }
+        default:
+            return state;
     }
-    return state;
 }
 
 export default todoReducer;

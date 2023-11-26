@@ -36,7 +36,7 @@ export default function Lists() {
                 todosLists.length > 0 ? todosLists.map((item, indexx) => (
                     <div key={item + indexx} className='Todo_List d-flex justify-content-between'>
                         <div className='d-flex'>
-                            <img src={arrow} className='Image_Todolist' /><p>&emsp;{item}</p>
+                            <img src={arrow} className='Image_Todolist' alt='dash' /><p>&emsp;{item}</p>
                         </div>
                         <div className='d-flex gap-lg-5 gap-xl-5 gap-md-4 gap-sm-1'>
                             <button onClick={() => { dispatch(editTodoStart(item, indexx)) }} className='edit_btn' ><i className="bi bi-pen text-warning"></i></button>
